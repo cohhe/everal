@@ -43,9 +43,12 @@ global $site_width;
 
 $form_class    = '';
 $class         = '';
-$search_string = '';
 $site_width    = 'col-sm-12 col-md-12 col-lg-12';
 $layout_type   = get_post_meta(get_the_id(), 'layouts', true);
+
+if ( !isset($search_string) ) {
+	$search_string = '';
+}
 
 if ( is_archive() || is_search() || is_404() ) {
 	$layout_type = 'full';
@@ -102,6 +105,7 @@ if ( ( EVERAL_LAYOUT == 'sidebar-left' && is_active_sidebar( 'sidebar-1' ) ) || 
 					}
 					?>
 				</div>
+				<?php if ( has_nav_menu( 'primary' ) ) { ?>
 				<button type="button" class="navbar-toggle visible-xs visible-sm" data-toggle="collapse" data-target=".site-navigation">
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
@@ -120,6 +124,7 @@ if ( ( EVERAL_LAYOUT == 'sidebar-left' && is_active_sidebar( 'sidebar-1' ) ) || 
 						);
 					?>
 				</nav>
+				<?php } ?>
 			</div>
 		</div>
 		<div class="clearfix"></div>

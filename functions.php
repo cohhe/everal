@@ -131,11 +131,11 @@ endif; // everal_setup
 add_action( 'after_setup_theme', 'everal_setup' );
 
 // Admin CSS
-function vh_admin_css() {
+function everal_admin_css() {
 	wp_enqueue_style( 'vh-admin-css', get_template_directory_uri() . '/css/wp-admin.css' );
 }
 
-add_action('admin_head','vh_admin_css');
+add_action('admin_head','everal_admin_css');
 
 /**
  * Adjust content_width value for image attachment template.
@@ -239,21 +239,28 @@ function everal_widgets_init() {
 add_action( 'widgets_init', 'everal_widgets_init' );
 
 /**
- * Register Lato Google font for Everal 1.0.
+ * Register Google fonts for Everal 1.0.
  *
  * @since Everal 1.0
  *
  * @return string
  */
 function everal_font_url() {
-	$font_url = '';
-	/*
-	 * Translators: If there are characters in your language that are not supported
-	 * by Lato, translate this to 'off'. Do not translate into your own language.
-	 */
-	$font_url = add_query_arg( 'family', urlencode( 'Roboto:400,100,300' ), "//fonts.googleapis.com/css" );
+	$fonts_url     = '';
+	$font_families = array();
 
-	return $font_url;
+	$font_families[] = 'Roboto:400,100,300,700,900';
+	$font_families[] = 'Roboto+Slab:400,100,300,700';
+	$font_families[] = 'Open+Sans:400,300,700';
+
+	$query_args = array(
+		'family' => urlencode( implode( '|', $font_families ) ),
+		'subset' => urlencode( 'latin' ),
+	);
+
+	$fonts_url = add_query_arg( $query_args, '//fonts.googleapis.com/css' );
+
+	return $fonts_url;
 }
 
 /**
@@ -268,7 +275,7 @@ function everal_scripts() {
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css', array() );
 
 	// Add Google fonts
-	wp_register_style('googleFonts', 'http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,900|Roboto+Slab:400,100,300,700|Open+Sans:400,300,700&subset=latin');
+	wp_register_style('googleFonts', everal_font_url());
 	wp_enqueue_style( 'googleFonts');
 
 	// Add Genericons font, used in the main stylesheet.
@@ -276,10 +283,6 @@ function everal_scripts() {
 
 	// Load our main stylesheet.
 	wp_enqueue_style( 'everal-style', get_stylesheet_uri(), array( 'genericons' ) );
-
-	// Load the Internet Explorer specific stylesheet.
-	wp_enqueue_style( 'everal-ie', get_template_directory_uri() . '/css/ie.css', array( 'everal-style', 'genericons' ), '20131205' );
-	wp_style_add_data( 'everal-ie', 'conditional', 'lt IE 9' );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -538,6 +541,47 @@ class Header_Menu_Walker extends Walker_Nav_Menu {
 		$output .= "<li id='menu-item-$item->ID' $class_names>";
 
 		$attributes  = '';
+
+		if ( !isset($item->target) ) {
+			$item->target = '';
+		}
+
+		if ( !isset($item->attr_title) ) {
+			$item->attr_title = '';
+		}
+
+		if ( !isset($item->xfn) ) {
+			$item->xfn = '';
+		}
+
+		if ( !isset($item->url) ) {
+			$item->url = '';
+		}
+
+		if ( !isset($item->title) ) {
+			$item->title = '';
+		}
+
+		if ( !isset($item->ID) ) {
+			$item->ID = '';
+		}
+
+		if ( !isset($args->link_before) ) {
+			$args = new stdClass();
+			$args->link_before = '';
+		}
+
+		if ( !isset($args->before) ) {
+			$args->before = '';
+		}
+
+		if ( !isset($args->link_after) ) {
+			$args->link_after = '';
+		}
+
+		if ( !isset($args->after) ) {
+			$args->after = '';
+		}
 
 		! empty( $item->attr_title )
 			and $attributes .= ' title="'  . esc_attr( $item->attr_title ) .'"';
