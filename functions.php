@@ -247,18 +247,33 @@ add_action( 'widgets_init', 'everal_widgets_init' );
  */
 function everal_font_url() {
 	$fonts_url     = '';
+	$roboto        = ot_get_option('google_font_roboto');
+	$roboto_slab   = ot_get_option('google_font_roboto_slab');
+	$open_sans     = ot_get_option('google_font_open_sans');
+
 	$font_families = array();
+	
+	if ( 'off' !== $roboto ) {
+		$font_families[] = 'Roboto:400,100,300,700,900';
+	}
 
-	$font_families[] = 'Roboto:400,100,300,700,900';
-	$font_families[] = 'Roboto+Slab:400,100,300,700';
-	$font_families[] = 'Open+Sans:400,300,700';
+	if ( 'off' !== $roboto_slab ) {
+		$font_families[] = 'Roboto+Slab:400,100,300,700';
+	}
 
-	$query_args = array(
-		'family' => urlencode( implode( '|', $font_families ) ),
-		'subset' => urlencode( 'latin' ),
-	);
+	if ( 'off' !== $open_sans ) {
+		$font_families[] = 'Open+Sans:400,300,700';
+	}
 
-	$fonts_url = add_query_arg( $query_args, '//fonts.googleapis.com/css' );
+	if ( !empty($font_families) ) {
+
+		$query_args = array(
+			'family' => urlencode( implode( '|', $font_families ) ),
+			'subset' => urlencode( 'latin' ),
+		);
+
+		$fonts_url = add_query_arg( $query_args, '//fonts.googleapis.com/css' );
+	}
 
 	return $fonts_url;
 }
@@ -275,8 +290,8 @@ function everal_scripts() {
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css', array() );
 
 	// Add Google fonts
-	wp_register_style('googleFonts', everal_font_url());
-	wp_enqueue_style( 'googleFonts');
+	// wp_register_style('googleFonts');
+	wp_enqueue_style( 'googleFonts', everal_font_url());
 
 	// Add Genericons font, used in the main stylesheet.
 	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.0.2' );

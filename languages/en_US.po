@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Everal v1.0.2\n"
+"Project-Id-Version: Everal v1.0.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2014-12-16 14:29:16+0000\n"
+"PO-Revision-Date: 2014-12-22 16:35:15+0000\n"
 "Last-Translator: smaids <smaids2007@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -308,7 +308,7 @@ msgstr ""
 msgid "Footer Widget Area 3"
 msgstr ""
 
-#: functions.php:477
+#: functions.php:492
 #, php-format
 #@ everal
 msgid "Page %s"
@@ -1141,8 +1141,8 @@ msgstr ""
 #: option-tree/includes/ot-functions-docs-page.php:374
 #: option-tree/includes/ot-functions-settings-page.php:170
 #: option-tree/ot-loader.php:741
-#: theme-options.php:41
-#: theme-options.php:93
+#: theme-options.php:45
+#: theme-options.php:97
 #@ everal
 #@ option-tree
 msgid "Send to OptionTree"
@@ -2822,47 +2822,47 @@ msgstr ""
 msgid "Galleries"
 msgstr ""
 
-#: theme-options.php:40
+#: theme-options.php:44
 #@ everal
 msgid "Website logo"
 msgstr ""
 
-#: theme-options.php:41
+#: theme-options.php:45
 #@ everal
 msgid "Please upload your logo."
 msgstr ""
 
-#: theme-options.php:55
+#: theme-options.php:59
 #@ everal
 msgid "Copyright"
 msgstr ""
 
-#: theme-options.php:56
+#: theme-options.php:60
 #@ everal
 msgid "Please provide short copyright text which will be shown in footer."
 msgstr ""
 
-#: theme-options.php:70
+#: theme-options.php:74
 #@ everal
 msgid "Show \"Scroll to Top\" button"
 msgstr ""
 
-#: theme-options.php:71
+#: theme-options.php:75
 #@ everal
 msgid "Do you want to show \"Scroll to Top\" button?"
 msgstr ""
 
-#: theme-options.php:85
+#: theme-options.php:89
 #@ everal
 msgid "Show"
 msgstr ""
 
-#: theme-options.php:92
+#: theme-options.php:96
 #@ everal
 msgid "Favicon"
 msgstr ""
 
-#: theme-options.php:93
+#: theme-options.php:97
 #@ everal
 msgid "Do you have favicon?"
 msgstr ""
@@ -2888,5 +2888,42 @@ msgstr ""
 #@ everal
 msgctxt "submit button"
 msgid "Search"
+msgstr ""
+
+#: theme-options.php:137
+#@ everal
+msgid "Roboto font"
+msgstr ""
+
+#: theme-options.php:138
+#@ everal
+msgid "If there are characters in your language that are not supported by Roboto, disable this option."
+msgstr ""
+
+#: theme-options.php:152
+#: theme-options.php:174
+#: theme-options.php:196
+#@ everal
+msgid "Disable"
+msgstr ""
+
+#: theme-options.php:159
+#@ everal
+msgid "Roboto Slab font"
+msgstr ""
+
+#: theme-options.php:160
+#@ everal
+msgid "If there are characters in your language that are not supported by Roboto Slab, disable this option."
+msgstr ""
+
+#: theme-options.php:181
+#@ everal
+msgid "Open Sans font"
+msgstr ""
+
+#: theme-options.php:182
+#@ everal
+msgid "If there are characters in your language that are not supported by Open Sans, disable this option."
 msgstr ""
 

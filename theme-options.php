@@ -32,6 +32,10 @@ function everal_theme_options() {
 	  array(
 		'id'          => 'general',
 		'title'       => 'General'
+	  ),
+	  array(
+		'id'          => 'fonts',
+		'title'       => 'Fonts'
 	  )
 	),
 	'settings'        => array(
@@ -125,6 +129,72 @@ function everal_theme_options() {
 					'value'   => 'right',
 					'label'   => 'Right Sidebar',
 					'src'     => OT_URL . '/assets/images/layout/right-sidebar.png'
+				)
+			)
+		),
+		array(
+			'id'           => 'google_font_roboto',
+			'label'        => __( 'Roboto font', 'everal' ),
+			'desc'         => __( 'If there are characters in your language that are not supported by Roboto, disable this option.', 'everal' ),
+			'std'          => 'on',
+			'type'         => 'on-off',
+			'section'      => 'fonts',
+			'rows'         => '',
+			'post_type'    => '',
+			'taxonomy'     => '',
+			'min_max_step' => '',
+			'class'        => '',
+			'condition'    => '',
+			'operator'     => 'and',
+			'choices'      => array( 
+				array(
+					'value' => 'off',
+					'label' => __( 'Disable', 'everal' ),
+					'src'   => ''
+				)
+			)
+		),
+		array(
+			'id'           => 'google_font_roboto_slab',
+			'label'        => __( 'Roboto Slab font', 'everal' ),
+			'desc'         => __( 'If there are characters in your language that are not supported by Roboto Slab, disable this option.', 'everal' ),
+			'std'          => 'on',
+			'type'         => 'on-off',
+			'section'      => 'fonts',
+			'rows'         => '',
+			'post_type'    => '',
+			'taxonomy'     => '',
+			'min_max_step' => '',
+			'class'        => '',
+			'condition'    => '',
+			'operator'     => 'and',
+			'choices'      => array( 
+				array(
+					'value' => 'off',
+					'label' => __( 'Disable', 'everal' ),
+					'src'   => ''
+				)
+			)
+		),
+		array(
+			'id'           => 'google_font_open_sans',
+			'label'        => __( 'Open Sans font', 'everal' ),
+			'desc'         => __( 'If there are characters in your language that are not supported by Open Sans, disable this option.', 'everal' ),
+			'std'          => 'on',
+			'type'         => 'on-off',
+			'section'      => 'fonts',
+			'rows'         => '',
+			'post_type'    => '',
+			'taxonomy'     => '',
+			'min_max_step' => '',
+			'class'        => '',
+			'condition'    => '',
+			'operator'     => 'and',
+			'choices'      => array( 
+				array(
+					'value' => 'off',
+					'label' => __( 'Disable', 'everal' ),
+					'src'   => ''
 				)
 			)
 		)
