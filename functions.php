@@ -311,7 +311,7 @@ function everal_scripts() {
 		wp_enqueue_script( 'jquery-masonry' );
 	}
 
-	if ( is_front_page() && 'slider' == get_theme_mod( 'featured_content_layout' ) ) {
+	if ( is_front_page() ) {
 		wp_enqueue_script( 'everal-slider', get_template_directory_uri() . '/js/slider.js', array( 'jquery' ), '20131205', true );
 	}
 
@@ -431,7 +431,7 @@ function everal_body_classes( $classes ) {
 		$classes[] = 'singular';
 	}
 
-	if ( is_front_page() && 'slider' == get_theme_mod( 'featured_content_layout' ) ) {
+	if ( is_front_page() ) {
 		$classes[] = 'slider';
 	} elseif ( is_front_page() ) {
 		$classes[] = 'grid';

@@ -18,16 +18,6 @@ function everal_theme_options() {
    * passes to the OptionTree Settings API Class.
    */
   $everal_settings = array(
-	'contextual_help' => array(
-	  'content'       => array( 
-		array(
-		  'id'        => 'general_help',
-		  'title'     => 'General',
-		  'content'   => '<p>Help content goes here!</p>'
-		)
-	  ),
-	  'sidebar'       => '<p>Sidebar content goes here!</p>',
-	),
 	'sections'        => array(
 	  array(
 		'id'          => 'general',

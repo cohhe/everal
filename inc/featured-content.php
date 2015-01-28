@@ -429,12 +429,12 @@ class Featured_Content {
 			'section'  => 'featured_content',
 			'priority' => 20,
 		) );
-		$wp_customize->add_control( 'featured-content[hide-tag]', array(
-			'label'    => __( 'Don&rsquo;t display tag on front end.', 'everal' ),
-			'section'  => 'featured_content',
-			'type'     => 'checkbox',
-			'priority' => 30,
-		) );
+		// $wp_customize->add_control( 'featured-content[hide-tag]', array(
+		// 	'label'    => __( 'Don&rsquo;t display tag on front end.', 'everal' ),
+		// 	'section'  => 'featured_content',
+		// 	'type'     => 'checkbox',
+		// 	'priority' => 30,
+		// ) );
 	}
 
 	/**
