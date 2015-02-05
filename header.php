@@ -90,10 +90,26 @@ if ( ( EVERAL_LAYOUT == 'sidebar-left' && is_active_sidebar( 'sidebar-1' ) ) || 
 			<div class="header-main row">
 				<div class="site-title col-xs-10 col-sm-10 col-md-2">
 					<?php
+					$large_logo_font_size = ot_get_option( 'large_logo_font_size' );
+					$scrolled_logo_font_size = ot_get_option( 'scrolled_logo_font_size' );
+					if ( $large_logo_font_size == '' ) {
+						$large_logo_font_size = '50';
+					}
+					if ( $scrolled_logo_font_size == '' ) {
+						$scrolled_logo_font_size = '34';
+					}
 					if ( ! empty ( $logo ) ) {?>
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo $logo; ?>"></a>
 						<?php
 					} else { ?>
+						<style type="text/css">
+							a.site-title {
+								font-size: <?php echo $large_logo_font_size.'px'; ?>
+							}
+							.fixed.shrink a.site-title {
+								font-size: <?php echo $scrolled_logo_font_size.'px'; ?>
+							}
+						</style>
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="site-title"><?php bloginfo( 'name' ); ?></a>
 						<?php
 						$description = get_bloginfo( 'description', 'display' );
