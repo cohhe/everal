@@ -309,6 +309,13 @@ if ( ! class_exists( 'OT_Settings' ) ) {
                   echo '</ul>';
                   
                 }
+
+                echo '<ul class="cohhe-social-profiles">
+                        <li class="social-twitter"><i class="ot-icon-twitter"></i><a href="https://twitter.com/Cohhe_Themes" target="_blank">Follow us on Twitter</a></li>
+                        <li class="social-facebook"><i class="ot-icon-facebook"></i><a href="https://www.facebook.com/cohhethemes" target="_blank">Join us on Facebook</a></li>
+                        <li class="social-googleplus"><i class="ot-icon-google-plus"></i><a href="https://plus.google.com/+Cohhe_Themes/posts" target="_blank">Join us on Google+</a></li>
+                        <li class="social-cohhe"><i class="cohhe_logo"></i><a href="http://cohhe.com/" target="_blank">Cohhe.com</a></li>
+                      </ul>';
                   
                   /* sections */
                   echo '<div id="poststuff" class="metabox-holder">';
