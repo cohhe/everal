@@ -104,10 +104,16 @@ if ( ( EVERAL_LAYOUT == 'sidebar-left' && is_active_sidebar( 'sidebar-1' ) ) || 
 					} else { ?>
 						<style type="text/css">
 							a.site-title {
-								font-size: <?php echo $large_logo_font_size.'px'; ?>
+								font-size: <?php echo $large_logo_font_size.'px;'; ?>
 							}
 							.fixed.shrink a.site-title {
-								font-size: <?php echo $scrolled_logo_font_size.'px'; ?>
+								font-size: <?php echo $scrolled_logo_font_size.'px;'; ?>
+							}
+							div.site-title {
+								font-size: <?php echo $large_logo_font_size.'px;'; ?>
+							}
+							.fixed.shrink div.site-title {
+								font-size: <?php echo $scrolled_logo_font_size.'px;'; ?>
 							}
 						</style>
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="site-title"><?php bloginfo( 'name' ); ?></a>
