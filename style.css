@@ -4,7 +4,7 @@ Theme URI: http://cohhe.com/project-view/everal/
 Author: Cohhe
 Author URI: http://cohhe.com/
 Description: Everal is a powerful, feature-rich theme that lets you customize a wide variety of features from the comfort of your Dashboard.
-Version: 1.0.5
+Version: 1.0.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, green, white, light, dark, two-columns, three-columns, left-sidebar, right-sidebar, fixed-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
@@ -887,8 +887,69 @@ a img.aligncenter {
 
 /* Header */
 
+.title-effect {
+	text-transform: uppercase;
+	font-weight: 900;
+	overflow: hidden;
+	line-height: 0.75;
+	color: #c5c2b8;
+}
+
+.title-effect:hover {
+	color: rgba(221, 55, 10, 1);
+}
+
+.title-effect::after {
+	content: '';
+	position: absolute;
+	height: 5px;
+	width: 100%;
+	top: 50%;
+	margin-top: -4px;
+	right: 0;
+	background: #fff;
+	-webkit-transform: translate3d(-100%,0,0);
+	transform: translate3d(-100%,0,0);
+	-webkit-transition: -webkit-transform 0.4s;
+	transition: transform 0.4s;
+	-webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+	transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+}
+
+.title-effect:hover::after {
+	-webkit-transform: translate3d(100%,0,0);
+	transform: translate3d(100%,0,0);
+}
+
+.title-effect::before {
+	content: attr(data-letters);
+	position: absolute;
+	z-index: 2;
+	overflow: hidden;
+	color: #2B2B2C;
+	text-shadow: 0 0 1px #2b2b2c;
+	white-space: nowrap;
+	width: 0%;
+	-webkit-transition: width 0.4s 0.3s;
+	transition: width 0.4s 0.3s;
+}
+
+.title-effect:hover::before {
+	width: 100%;
+}
+
+.title-effect {
+	outline: none;
+	text-decoration: none;
+	position: relative;
+	font-size: 8em;
+	line-height: 1;
+	color: #9e9ba4;
+	display: inline-block;
+}
+
 a.site-title {
-	color: #DD370A;
+	color: rgba(221, 55, 10, 1);
 	font-weight: 900;
 	font-size: 50px;
 	text-transform: uppercase;
@@ -896,10 +957,7 @@ a.site-title {
 	line-height: 0.96em;
 	margin-top: 16px;
 	display: block;
-}
-
-a.site-title:hover {
-	color: #2B2B2C;
+	float: left;
 }
 
 p.site-description {
@@ -2112,6 +2170,23 @@ article.hentry .more-link .meta-nav {
 
 .comments-container .comment-form p {
 	margin-bottom: 5px;
+	position: relative;
+
+	-webkit-transition: all .3s ease;
+	-moz-transition: all .3s ease;
+	-ms-transition: all .3s ease;
+	-o-transition: all .3s ease;
+	transition: all .3s ease;
+}
+
+.comments-container .comment-form .comment-form-comment {
+	float: left;
+	width: 100%;
+	margin-top: 30px;
+}
+
+.form-allowed-tags {
+	clear: both;
 }
 
 .comments-container .comment-form p.logged-in-as,
@@ -2131,11 +2206,71 @@ article.hentry .more-link .meta-nav {
 	display: block;
 }
 
-.comments-container .comment-form p label {
-	clear: both;
-	display: block;
+.comments-container .comment-form p label,
+.wpcf7-form p label {
 	font-size: 16px;
-	margin-bottom: 3px;
+	position: absolute;
+	top: 4px;
+	left: 15px;
+	color: #ccc;
+}
+
+.comments-container .comment-form p.input-focused label,
+.wpcf7-form p.input-focused label {
+	-webkit-animation: everal_form_animation 0.4s forwards ease-in;
+	animation: everal_form_animation 0.4s forwards ease-in;
+}
+
+.comments-container .comment-form p.input-unfocused label,
+.wpcf7-form p.input-unfocused label {
+	-webkit-animation: everal_form_animation_reverse 0.4s forwards ease-in;
+	animation: everal_form_animation_reverse 0.4s forwards ease-in;
+}
+
+/* Forwards */
+
+@-webkit-keyframes everal_form_animation {
+		0% { top: 4px; opacity: 1; left: 15px; color: #ccc }
+		33% { top: 20px; opacity: 0; left: 15px; color: #ccc }
+		66% { top: -37px; opacity: 0; left: 0; color: #333 }
+		100% { top: -27px; opacity: 1; left: 0; color: #333 }
+}
+
+@-moz-keyframes everal_form_animation {
+		0% { top: 4px; opacity: 1; left: 15px; color: #ccc }
+		33% { top: 20px; opacity: 0; left: 15px; color: #ccc }
+		66% { top: -37px; opacity: 0; left: 0; color: #333 }
+		100% { top: -27px; opacity: 1; left: 0; color: #333 }
+}
+
+@keyframes everal_form_animation {
+		0% { top: 4px; opacity: 1; left: 15px; color: #ccc }
+		33% { top: 20px; opacity: 0; left: 15px; color: #ccc }
+		66% { top: -37px; opacity: 0; left: 0; color: #333 }
+		100% { top: -27px; opacity: 1; left: 0; color: #333 }
+}
+
+/* Reverse */
+
+@-webkit-keyframes everal_form_animation_reverse {
+		0% { top: -27px; opacity: 1; left: 0; color: #333 }
+		33% { top: -37px; opacity: 0; left: 0; color: #333 }
+		66% { top: 20px; opacity: 0; left: 15px; color: #ccc }
+		100% { top: 4px; opacity: 1; left: 15px; color: #ccc }
+}
+
+@-moz-keyframes everal_form_animation_reverse {
+		0% { top: -27px; opacity: 1; left: 0; color: #333 }
+		33% { top: -37px; opacity: 0; left: 0; color: #333 }
+		66% { top: 20px; opacity: 0; left: 15px; color: #ccc }
+		100% { top: 4px; opacity: 1; left: 15px; color: #ccc }
+}
+
+@keyframes everal_form_animation_reverse {
+		0% { top: -27px; opacity: 1; left: 0; color: #333 }
+		33% { top: -37px; opacity: 0; left: 0; color: #333 }
+		66% { top: 20px; opacity: 0; left: 15px; color: #ccc }
+		100% { top: 4px; opacity: 1; left: 15px; color: #ccc }
 }
 
 .comments-container .comment-form #comment {
@@ -2148,6 +2283,71 @@ article.hentry .more-link .meta-nav {
 .comments-container input[type=url],
 .comments-container textarea {
 	border: 1px solid rgba(0,0,0,0.09);
+	outline: none;
+}
+
+.comments-container .comment-form-author,
+.comments-container .comment-form-email,
+.comments-container .comment-form-url {
+	width: 33.33%;
+	float: left;
+}
+
+.comments-container .comment-form-email {
+	margin: 0 20px;
+	width: calc( 33.33% - 40px );
+}
+
+.comments-container .comment-form-author input,
+.comments-container .comment-form-email input,
+.comments-container .comment-form-url input {
+	width: 100%;
+}
+
+.comments-container .comment-form-author.input-focused input,
+.comments-container .comment-form-email.input-focused input,
+.comments-container .comment-form-url.input-focused input,
+.comments-container .comment-form-comment.input-focused textarea {
+	border-color: rgba(0,0,0,0.4);
+}
+
+/* Contact form 7 */
+
+.wpcf7-form p {
+	position: relative;
+	clear: both;
+}
+
+.wpcf7-form p.cf7-first-row {
+	width: 33.33%;
+	float: left;
+	clear: none;
+}
+
+.wpcf7-form p.email {
+	margin: 0 20px;
+	width: calc( 33.33% - 40px );
+}
+
+.wpcf7-form p.cf7-message {
+	margin-top: 11px;
+	float: left;
+	width: 100%;
+}
+
+.wpcf7-form p input,
+.wpcf7-form p textarea {
+	background-color: transparent;
+	outline: none;
+	width: 100%;
+}
+
+.wpcf7-form p.input-focused input {
+	border-color: rgba(0,0,0,0.4);
+}
+
+.wpcf7-form p br {
+	display: none;
 }
 
 /* Page navigation */

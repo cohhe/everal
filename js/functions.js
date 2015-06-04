@@ -27,6 +27,38 @@
 		return false;
 	});
 
+	jQuery('.comment-form-author input, .comment-form-email input, .comment-form-url input, .comment-form-comment textarea').focus(function() {
+		if ( jQuery(this).parent().hasClass('input-unfocused') ) {
+			jQuery(this).parent().removeClass('input-unfocused');
+		};
+		jQuery(this).parent().addClass('input-focused');
+	});
+
+	jQuery('.comment-form-author input, .comment-form-email input, .comment-form-url input, .comment-form-comment textarea').blur(function() {
+		if ( jQuery(this).val() == '' ) {
+			jQuery(this).parent().removeClass('input-focused');
+			jQuery(this).parent().addClass('input-unfocused');
+		} else {
+			jQuery(this).parent().addClass('input-focused');
+		}
+	});
+
+	jQuery('.wpcf7-form-control-wrap input, .wpcf7-form p textarea').focus(function() {
+		if ( jQuery(this).parent().parent().hasClass('input-unfocused') ) {
+			jQuery(this).parent().parent().removeClass('input-unfocused');
+		};
+		jQuery(this).parent().parent().addClass('input-focused');
+	});
+
+	jQuery('.wpcf7-form-control-wrap input, .wpcf7-form p textarea').blur(function() {
+		if ( jQuery(this).val() == '' ) {
+			jQuery(this).parent().parent().removeClass('input-focused');
+			jQuery(this).parent().parent().addClass('input-unfocused');
+		} else {
+			jQuery(this).parent().parent().addClass('input-focused');
+		}
+	});
+
 	// Shrink header on scroll down
 	if($('.site-header').length > 0) {
 		var y = $(window).scrollTop();
