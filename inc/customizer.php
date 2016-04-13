@@ -51,8 +51,89 @@ function everal_customize_register( $wp_customize ) {
 			'slider' => __( 'Slider', 'everal' ),
 		),
 	) );
+
+	// Social links
+	$wp_customize->add_section( new everal_Customized_Section( $wp_customize, 'everal_social_links', array(
+		'priority'       => 300,
+		'capability'     => 'edit_theme_options'
+		) )
+	);
+
+	$wp_customize->add_setting( 'everal_fake_field', array( 'sanitize_callback' => 'sanitize_text_field' ) );
+
+	$wp_customize->add_control(
+		'everal_fake_field',
+		array(
+			'label'      => '',
+			'section'    => 'everal_social_links',
+			'type'       => 'text'
+		)
+	);
 }
 add_action( 'customize_register', 'everal_customize_register' );
+
+if ( class_exists( 'WP_Customize_Section' ) && !class_exists( 'everal_Customized_Section' ) ) {
+	class everal_Customized_Section extends WP_Customize_Section {
+		public function render() {
+			$classes = 'accordion-section control-section control-section-' . $this->type;
+			?>
+			<li id="accordion-section-<?php echo esc_attr( $this->id ); ?>" class="<?php echo esc_attr( $classes ); ?>">
+				<style type="text/css">
+					.cohhe-social-profiles {
+						padding: 14px;
+					}
+					.cohhe-social-profiles li:last-child {
+						display: none !important;
+					}
+					.cohhe-social-profiles li i {
+						width: 20px;
+						height: 20px;
+						display: inline-block;
+						background-size: cover !important;
+						margin-right: 5px;
+						float: left;
+					}
+					.cohhe-social-profiles li i.twitter {
+						background: url(<?php echo get_template_directory_uri().'/images/icons/twitter.png'; ?>);
+					}
+					.cohhe-social-profiles li i.facebook {
+						background: url(<?php echo get_template_directory_uri().'/images/icons/facebook.png'; ?>);
+					}
+					.cohhe-social-profiles li i.googleplus {
+						background: url(<?php echo get_template_directory_uri().'/images/icons/googleplus.png'; ?>);
+					}
+					.cohhe-social-profiles li i.cohhe_logo {
+						background: url(<?php echo get_template_directory_uri().'/images/icons/cohhe.png'; ?>);
+					}
+					.cohhe-social-profiles li a {
+						height: 20px;
+						line-height: 20px;
+					}
+					#customize-theme-controls>ul>#accordion-section-everal_social_links {
+						margin-top: 10px;
+					}
+					.cohhe-social-profiles li.documentation {
+						text-align: right;
+						margin-bottom: 10px;
+					}
+					.cohhe-social-profiles li.gopremium {
+						text-align: right;
+						margin-bottom: 60px;
+					}
+				</style>
+				<ul class="cohhe-social-profiles">
+					<li class="documentation"><a href="http://documentation.cohhe.com/everal" class="button button-primary button-hero" target="_blank"><?php _e( 'Documentation', 'everal' ); ?></a></li>
+					<li class="gopremium"><a href="https://cohhe.com/project-view/everal-pro/" class="button button-secondary button-hero" target="_blank"><?php _e( 'Go Premium', 'everal' ); ?></a></li>
+					<li class="social-twitter"><i class="twitter"></i><a href="https://twitter.com/Cohhe_Themes" target="_blank"><?php _e( 'Follow us on Twitter', 'everal' ); ?></a></li>
+					<li class="social-facebook"><i class="facebook"></i><a href="https://www.facebook.com/cohhethemes" target="_blank"><?php _e( 'Join us on Facebook', 'everal' ); ?></a></li>
+					<li class="social-googleplus"><i class="googleplus"></i><a href="https://plus.google.com/+Cohhe_Themes/posts" target="_blank"><?php _e( 'Join us on Google+', 'everal' ); ?></a></li>
+					<li class="social-cohhe"><i class="cohhe_logo"></i><a href="https://cohhe.com/" target="_blank"><?php _e( 'Cohhe.com', 'everal' ); ?></a></li>
+				</ul>
+			</li>
+			<?php
+		}
+	}
+}
 
 /**
  * Sanitize the Featured Content layout value.
