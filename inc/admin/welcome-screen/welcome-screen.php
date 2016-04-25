@@ -134,8 +134,8 @@ class everal_Welcome {
 
 		wp_localize_script( 'everal-welcome-screen-screen-customizer-js', 'everalWelcomeScreenCustomizerObject', array(
 			'nr_actions_required' => $nr_actions_required,
-			'aboutpage' => esc_url( admin_url( 'themes.php?page=everal-welcome-screen#actions_required' ) ),
-			'customizerpage' => esc_url( admin_url( 'customize.php#actions_required' ) ),
+			'aboutpage' => esc_url( admin_url( 'themes.php?page=everal-welcome-screen#getting_started' ) ),
+			'customizerpage' => esc_url( admin_url( 'customize.php#getting_started' ) ),
 			'themeinfo' => __('View Theme Info','everal'),
 		) );
 	}
