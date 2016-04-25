@@ -68,6 +68,7 @@ if ( ! function_exists( 'everal_setup' ) ) :
  */
 function everal_setup() {
 	require(get_template_directory() . '/inc/metaboxes/layouts.php');
+	require_once(get_template_directory() . '/inc/admin/welcome-screen/welcome-screen.php');
 
 	/*
 	 * Make Everal 1.0 available for translation.
