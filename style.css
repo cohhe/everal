@@ -1974,6 +1974,7 @@ article .entry-content dd {
 
 .widget .divider {
 	position: relative;
+	display: inline-block;
 }
 
 .widget .divider:after {
