@@ -3223,6 +3223,11 @@ div.wpcf7-mail-sent-ok {
 		font-size: 120%;
 		line-height: 28px;
 	}
+
+	body .site-content article.type-post,
+	body .site-content article.type-page {
+		float: none !important;
+	}
 }
 
 @media (max-width:992px) {
