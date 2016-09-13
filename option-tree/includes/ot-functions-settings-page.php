@@ -32,13 +32,13 @@ if ( ! function_exists( 'ot_type_theme_options_ui' ) ) {
         /* description */
         echo '<div class="description">';
           
-          echo '<h4>'. __( 'Warning!', 'option-tree' ) . '</h4>';
-          echo '<p class="warning">' . sprintf( __( 'Go to the %s page if you want to save data, this page is for adding settings.', 'option-tree' ), '<a href="' . get_admin_url( $blog_id, 'themes.php?page=ot-theme-options' ) . '"><code>Appearance->Theme Options</code></a>' ) . '</p>';
-          echo '<p class="warning">' . sprintf( __( 'If you\'re unsure or not completely positive that you should be editing these settings, you should read the %s first.', 'option-tree' ), '<a href="' . get_admin_url( $blog_id, 'admin.php?page=ot-documentation' ) . '"><code>OptionTree->Documentation</code></a>' ) . '</p>';
-          echo '<h4>'. __( 'Things could break or be improperly displayed to the end-user if you do one of the following:', 'option-tree' ) . '</h4>';
-          echo '<p class="warning">' . __( 'Give two sections the same ID, give two settings the same ID, give two contextual help content areas the same ID, don\'t create any settings, or have a section at the end of the settings list.', 'option-tree' ) . '</p>';
-          echo '<p>' . __( 'You can create as many settings as your project requires and use them how you see fit. When you add a setting here, it will be available on the Theme Options page for use in your theme. To separate your settings into sections, click the "Add Section" button, fill in the input fields, and a new navigation menu item will be created.', 'option-tree' ) . '</p>';
-          echo '<p>' . __( 'All of the settings can be sorted and rearranged to your liking with Drag & Drop. Don\'t worry about the order in which you create your settings, you can always reorder them.', 'option-tree' ) . '</p>';
+          echo '<h4>'. __( 'Warning!', 'everal' ) . '</h4>';
+          echo '<p class="warning">' . sprintf( __( 'Go to the %s page if you want to save data, this page is for adding settings.', 'everal' ), '<a href="' . get_admin_url( $blog_id, 'themes.php?page=ot-theme-options' ) . '"><code>Appearance->Theme Options</code></a>' ) . '</p>';
+          echo '<p class="warning">' . sprintf( __( 'If you\'re unsure or not completely positive that you should be editing these settings, you should read the %s first.', 'everal' ), '<a href="' . get_admin_url( $blog_id, 'admin.php?page=ot-documentation' ) . '"><code>OptionTree->Documentation</code></a>' ) . '</p>';
+          echo '<h4>'. __( 'Things could break or be improperly displayed to the end-user if you do one of the following:', 'everal' ) . '</h4>';
+          echo '<p class="warning">' . __( 'Give two sections the same ID, give two settings the same ID, give two contextual help content areas the same ID, don\'t create any settings, or have a section at the end of the settings list.', 'everal' ) . '</p>';
+          echo '<p>' . __( 'You can create as many settings as your project requires and use them how you see fit. When you add a setting here, it will be available on the Theme Options page for use in your theme. To separate your settings into sections, click the "Add Section" button, fill in the input fields, and a new navigation menu item will be created.', 'everal' ) . '</p>';
+          echo '<p>' . __( 'All of the settings can be sorted and rearranged to your liking with Drag & Drop. Don\'t worry about the order in which you create your settings, you can always reorder them.', 'everal' ) . '</p>';
           
         echo '</div>';
         
@@ -89,18 +89,18 @@ if ( ! function_exists( 'ot_type_theme_options_ui' ) ) {
           echo '</ul>';
           
           /* buttons */
-          echo '<a href="javascript:void(0);" class="option-tree-section-add option-tree-ui-button button hug-left">' . __( 'Add Section', 'option-tree' ) . '</a>';
-          echo '<a href="javascript:void(0);" class="option-tree-setting-add option-tree-ui-button button">' . __( 'Add Setting', 'option-tree' ) . '</a>';
-          echo '<button class="option-tree-ui-button button button-primary right hug-right">' . __( 'Save Changes', 'option-tree' ) . '</button>';
+          echo '<a href="javascript:void(0);" class="option-tree-section-add option-tree-ui-button button hug-left">' . __( 'Add Section', 'everal' ) . '</a>';
+          echo '<a href="javascript:void(0);" class="option-tree-setting-add option-tree-ui-button button">' . __( 'Add Setting', 'everal' ) . '</a>';
+          echo '<button class="option-tree-ui-button button button-primary right hug-right">' . __( 'Save Changes', 'everal' ) . '</button>';
           
           /* sidebar textarea */
           echo '
           <div class="format-setting-label" id="contextual-help-label">
-            <h3 class="label">' . __( 'Contextual Help', 'option-tree' ) . '</h3>
+            <h3 class="label">' . __( 'Contextual Help', 'everal' ) . '</h3>
           </div>
           <div class="format-settings" id="contextual-help-setting">
             <div class="format-setting type-textarea no-desc">
-              <div class="description"><strong>' . __( 'Contextual Help Sidebar', 'option-tree' ) . '</strong>: ' . __( 'If you decide to add contextual help to the Theme Option page, enter the optional "Sidebar" HTML here. This would be an extremely useful place to add links to your themes documentation or support forum. Only after you\'ve added some content below will this display to the user.', 'option-tree' ) . '</div>
+              <div class="description"><strong>' . __( 'Contextual Help Sidebar', 'everal' ) . '</strong>: ' . __( 'If you decide to add contextual help to the Theme Option page, enter the optional "Sidebar" HTML here. This would be an extremely useful place to add links to your themes documentation or support forum. Only after you\'ve added some content below will this display to the user.', 'everal' ) . '</div>
               <div class="format-setting-inner">
                 <textarea class="textarea" rows="10" cols="40" name="' . ot_settings_id(). '[contextual_help][sidebar]">' . ( isset( $settings['contextual_help']['sidebar'] ) ? esc_html( $settings['contextual_help']['sidebar'] ) : '' ) . '</textarea>
               </div>
@@ -129,8 +129,8 @@ if ( ! function_exists( 'ot_type_theme_options_ui' ) ) {
           
           echo '</ul>';
 
-          echo '<a href="javascript:void(0);" class="option-tree-help-add option-tree-ui-button button hug-left">' . __( 'Add Contextual Help Content', 'option-tree' ) . '</a>';
-          echo '<button class="option-tree-ui-button button button-primary right hug-right">' . __( 'Save Changes', 'option-tree' ) . '</button>';
+          echo '<a href="javascript:void(0);" class="option-tree-help-add option-tree-ui-button button hug-left">' . __( 'Add Contextual Help Content', 'everal' ) . '</a>';
+          echo '<button class="option-tree-ui-button button button-primary right hug-right">' . __( 'Save Changes', 'everal' ) . '</button>';
 
         echo '</div>';
         
@@ -165,12 +165,12 @@ if ( ! function_exists( 'ot_type_import_xml' ) ) {
         /* description */
         echo '<div class="description">';
           
-          echo '<p class="deprecated">' . __( 'This import method has been deprecated. That means it has been replaced by a new method and is no longer supported, and may be removed from future versions. All themes that use this import method should be converted to use its replacement below.', 'option-tree' ) . '</p>';
+          echo '<p class="deprecated">' . __( 'This import method has been deprecated. That means it has been replaced by a new method and is no longer supported, and may be removed from future versions. All themes that use this import method should be converted to use its replacement below.', 'everal' ) . '</p>';
           
-          echo '<p>' . sprintf( __( 'If you were given a Theme Options XML file with a premium or free theme, locate it on your hard drive and upload that file by clicking the upload button. A popup window will appear, upload the XML file and click "%s". The file URL should be in the upload input, if it is click "Import XML".', 'option-tree' ), apply_filters( 'ot_upload_text', __( 'Send to OptionTree', 'option-tree' ) ) ) . '</p>';
+          echo '<p>' . sprintf( __( 'If you were given a Theme Options XML file with a premium or free theme, locate it on your hard drive and upload that file by clicking the upload button. A popup window will appear, upload the XML file and click "%s". The file URL should be in the upload input, if it is click "Import XML".', 'everal' ), apply_filters( 'ot_upload_text', __( 'Send to OptionTree', 'everal' ) ) ) . '</p>';
           
           /* button */
-          echo '<button class="option-tree-ui-button button button-primary right hug-right">' . __( 'Import XML', 'option-tree' ) . '</button>';
+          echo '<button class="option-tree-ui-button button button-primary right hug-right">' . __( 'Import XML', 'everal' ) . '</button>';
           
         echo '</div>';
         
@@ -186,7 +186,7 @@ if ( ! function_exists( 'ot_type_import_xml' ) ) {
             $post_id = ( $id = ot_get_media_post_ID() ) ? (int) $id : 0;
           
             /* add xml button */
-            echo '<a href="javascript:void(0);" class="ot_upload_media option-tree-ui-button button button-primary light" rel="' . $post_id . '" title="' . __( 'Add XML', 'option-tree' ) . '"><span class="icon ot-icon-plus-circle"></span>' . __( 'Add XML', 'option-tree' ) . '</a>';
+            echo '<a href="javascript:void(0);" class="ot_upload_media option-tree-ui-button button button-primary light" rel="' . $post_id . '" title="' . __( 'Add XML', 'everal' ) . '"><span class="icon ot-icon-plus-circle"></span>' . __( 'Add XML', 'everal' ) . '</a>';
           
           echo '</div>';
           
@@ -223,10 +223,10 @@ if ( ! function_exists( 'ot_type_import_settings' ) ) {
         /* description */
         echo '<div class="description">';
           
-          echo '<p>' . __( 'To import your Settings copy and paste what appears to be a random string of alpha numeric characters into this textarea and press the "Import Settings" button.', 'option-tree' ) . '</p>';
+          echo '<p>' . __( 'To import your Settings copy and paste what appears to be a random string of alpha numeric characters into this textarea and press the "Import Settings" button.', 'everal' ) . '</p>';
           
           /* button */
-          echo '<button class="option-tree-ui-button button button-primary right hug-right">' . __( 'Import Settings', 'option-tree' ) . '</button>';
+          echo '<button class="option-tree-ui-button button button-primary right hug-right">' . __( 'Import Settings', 'everal' ) . '</button>';
           
         echo '</div>';
         
@@ -268,12 +268,12 @@ if ( ! function_exists( 'ot_type_import_data' ) ) {
         /* description */
         echo '<div class="description">';
           
-          if ( OT_SHOW_SETTINGS_IMPORT ) echo '<p>' . __( 'Only after you\'ve imported the Settings should you try and update your Theme Options.', 'option-tree' ) . '</p>';
+          if ( OT_SHOW_SETTINGS_IMPORT ) echo '<p>' . __( 'Only after you\'ve imported the Settings should you try and update your Theme Options.', 'everal' ) . '</p>';
           
-          echo '<p>' . __( 'To import your Theme Options copy and paste what appears to be a random string of alpha numeric characters into this textarea and press the "Import Theme Options" button.', 'option-tree' ) . '</p>';
+          echo '<p>' . __( 'To import your Theme Options copy and paste what appears to be a random string of alpha numeric characters into this textarea and press the "Import Theme Options" button.', 'everal' ) . '</p>';
           
           /* button */
-          echo '<button class="option-tree-ui-button button button-primary right hug-right">' . __( 'Import Theme Options', 'option-tree' ) . '</button>';
+          echo '<button class="option-tree-ui-button button button-primary right hug-right">' . __( 'Import Theme Options', 'everal' ) . '</button>';
           
         echo '</div>';
         
@@ -315,12 +315,12 @@ if ( ! function_exists( 'ot_type_import_layouts' ) ) {
         /* description */
         echo '<div class="description">';
           
-          if ( OT_SHOW_SETTINGS_IMPORT ) echo '<p>' . __( 'Only after you\'ve imported the Settings should you try and update your Layouts.', 'option-tree' ) . '</p>';
+          if ( OT_SHOW_SETTINGS_IMPORT ) echo '<p>' . __( 'Only after you\'ve imported the Settings should you try and update your Layouts.', 'everal' ) . '</p>';
           
-          echo '<p>' . __( 'To import your Layouts copy and paste what appears to be a random string of alpha numeric characters into this textarea and press the "Import Layouts" button. Keep in mind that when you import your layouts, the active layout\'s saved data will write over the current data set for your Theme Options.', 'option-tree' ) . '</p>';
+          echo '<p>' . __( 'To import your Layouts copy and paste what appears to be a random string of alpha numeric characters into this textarea and press the "Import Layouts" button. Keep in mind that when you import your layouts, the active layout\'s saved data will write over the current data set for your Theme Options.', 'everal' ) . '</p>';
           
           /* button */
-          echo '<button class="option-tree-ui-button button button-primary right hug-right">' . __( 'Import Layouts', 'option-tree' ) . '</button>';
+          echo '<button class="option-tree-ui-button button button-primary right hug-right">' . __( 'Import Layouts', 'everal' ) . '</button>';
           
         echo '</div>';
         
@@ -363,7 +363,7 @@ if ( ! function_exists( 'ot_type_export_settings_file' ) ) {
         /* description */
         echo '<div class="description">';
           
-          echo '<p>' . sprintf( __( 'Export your Settings into a fully functional %s file. If you want to add your own custom %s text domain to the file, enter it into the text field before exporting. For more information on how to use this file read the documentation on %s. Remember, you should always check the file for errors before including it in your theme.', 'option-tree' ), '<code>theme-options.php</code>', '<a href="http://codex.wordpress.org/I18n_for_WordPress_Developers" target="_blank">I18n</a>', '<a href="' . get_admin_url( $blog_id, 'admin.php?page=ot-documentation#section_theme_mode' ) . '">' . __( 'Theme Mode', 'option-tree' ) . '</a>' ) . '</p>';
+          echo '<p>' . sprintf( __( 'Export your Settings into a fully functional %s file. If you want to add your own custom %s text domain to the file, enter it into the text field before exporting. For more information on how to use this file read the documentation on %s. Remember, you should always check the file for errors before including it in your theme.', 'everal' ), '<code>theme-options.php</code>', '<a href="http://codex.wordpress.org/I18n_for_WordPress_Developers" target="_blank">I18n</a>', '<a href="' . get_admin_url( $blog_id, 'admin.php?page=ot-documentation#section_theme_mode' ) . '">' . __( 'Theme Mode', 'everal' ) . '</a>' ) . '</p>';
           
         echo '</div>';
           
@@ -372,7 +372,7 @@ if ( ! function_exists( 'ot_type_export_settings_file' ) ) {
           echo '<input type="text" name="domain" value="" class="widefat option-tree-ui-input" placeholder="text-domain" autocomplete="off" />';
           
           /* button */
-          echo '<button class="option-tree-ui-button button button-primary hug-left">' . __( 'Export Settings File', 'option-tree' ) . '</button>';
+          echo '<button class="option-tree-ui-button button button-primary hug-left">' . __( 'Export Settings File', 'everal' ) . '</button>';
           
         echo '</div>';
         
@@ -402,7 +402,7 @@ if ( ! function_exists( 'ot_type_export_settings' ) ) {
       /* description */
       echo '<div class="description">';
         
-        echo '<p>' . __( 'Export your Settings by highlighting this text and doing a copy/paste into a blank .txt file. Then save the file for importing into another install of WordPress later. Alternatively, you could just paste it into the <code>OptionTree->Settings->Import</code> <strong>Settings</strong> textarea on another web site.', 'option-tree' ) . '</p>';
+        echo '<p>' . __( 'Export your Settings by highlighting this text and doing a copy/paste into a blank .txt file. Then save the file for importing into another install of WordPress later. Alternatively, you could just paste it into the <code>OptionTree->Settings->Import</code> <strong>Settings</strong> textarea on another web site.', 'everal' ) . '</p>';
         
       echo '</div>';
         
@@ -438,7 +438,7 @@ if ( ! function_exists( 'ot_type_export_data' ) ) {
       /* description */
       echo '<div class="description">';
         
-        echo '<p>' . __( 'Export your Theme Options data by highlighting this text and doing a copy/paste into a blank .txt file. Then save the file for importing into another install of WordPress later. Alternatively, you could just paste it into the <code>OptionTree->Settings->Import</code> <strong>Theme Options</strong> textarea on another web site.', 'option-tree' ) . '</p>';
+        echo '<p>' . __( 'Export your Theme Options data by highlighting this text and doing a copy/paste into a blank .txt file. Then save the file for importing into another install of WordPress later. Alternatively, you could just paste it into the <code>OptionTree->Settings->Import</code> <strong>Theme Options</strong> textarea on another web site.', 'everal' ) . '</p>';
         
       echo '</div>';
       
@@ -474,7 +474,7 @@ if ( ! function_exists( 'ot_type_export_layouts' ) ) {
       /* description */
       echo '<div class="description">';
         
-        echo '<p>' . __( 'Export your Layouts by highlighting this text and doing a copy/paste into a blank .txt file. Then save the file for importing into another install of WordPress later. Alternatively, you could just paste it into the <code>OptionTree->Settings->Import</code> <strong>Layouts</strong> textarea on another web site.', 'option-tree' ) . '</p>';
+        echo '<p>' . __( 'Export your Layouts by highlighting this text and doing a copy/paste into a blank .txt file. Then save the file for importing into another install of WordPress later. Alternatively, you could just paste it into the <code>OptionTree->Settings->Import</code> <strong>Layouts</strong> textarea on another web site.', 'everal' ) . '</p>';
         
         
       echo '</div>';
@@ -516,10 +516,10 @@ if ( ! function_exists( 'ot_type_modify_layouts' ) ) {
         /* description */
         echo '<div class="description">';
           
-          echo '<p>' . __( 'To add a new layout enter a unique lower case alphanumeric string (dashes allowed) in the text field and click "Save Layouts".', 'option-tree' ) . '</p>';
-          echo '<p>' . __( 'As well, you can activate, remove, and drag & drop the order; all situations require you to click "Save Layouts" for the changes to be applied.', 'option-tree' ) . '</p>';
-          echo '<p>' . __( 'When you create a new layout it will become active and any changes made to the Theme Options will be applied to it. If you switch back to a different layout immediately after creating a new layout that new layout will have a snapshot of the current Theme Options data attached to it.', 'option-tree' ) . '</p>';
-          if ( OT_SHOW_DOCS ) echo '<p>' . __( 'Visit <code>OptionTree->Documentation->Layouts Overview</code> to see a more in-depth description of what layouts are and how to use them.', 'option-tree' ) . '</p>';
+          echo '<p>' . __( 'To add a new layout enter a unique lower case alphanumeric string (dashes allowed) in the text field and click "Save Layouts".', 'everal' ) . '</p>';
+          echo '<p>' . __( 'As well, you can activate, remove, and drag & drop the order; all situations require you to click "Save Layouts" for the changes to be applied.', 'everal' ) . '</p>';
+          echo '<p>' . __( 'When you create a new layout it will become active and any changes made to the Theme Options will be applied to it. If you switch back to a different layout immediately after creating a new layout that new layout will have a snapshot of the current Theme Options data attached to it.', 'everal' ) . '</p>';
+          if ( OT_SHOW_DOCS ) echo '<p>' . __( 'Visit <code>OptionTree->Documentation->Layouts Overview</code> to see a more in-depth description of what layouts are and how to use them.', 'everal' ) . '</p>';
           
         echo '</div>';
         
@@ -556,7 +556,7 @@ if ( ! function_exists( 'ot_type_modify_layouts' ) ) {
           
           echo '</ul>';
             
-          echo '<button class="option-tree-ui-button button button-primary right hug-right">' . __( 'Save Layouts', 'option-tree' ) . '</button>';
+          echo '<button class="option-tree-ui-button button button-primary right hug-right">' . __( 'Save Layouts', 'everal' ) . '</button>';
             
         echo '</div>';
         

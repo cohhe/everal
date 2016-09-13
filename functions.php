@@ -127,6 +127,8 @@ function everal_setup() {
 
 	// This theme uses its own gallery styles.
 	add_filter( 'use_default_gallery_style', '__return_false' );
+
+	add_theme_support( 'title-tag' );
 }
 endif; // everal_setup
 add_action( 'after_setup_theme', 'everal_setup' );

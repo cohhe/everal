@@ -359,7 +359,7 @@ if ( ! class_exists( 'OT_Settings' ) ) {
         
                   echo '<input type="hidden" name="action" value="reset" />';
                   
-                  echo '<button type="submit" class="option-tree-ui-button button button-secondary left reset-settings" title="' . __( 'Reset Options', 'option-tree' ) . '">' . __( 'Reset Options', 'option-tree' ) . '</button>';
+                  echo '<button type="submit" class="option-tree-ui-button button button-secondary left reset-settings" title="' . __( 'Reset Options', 'everal' ) . '">' . __( 'Reset Options', 'everal' ) . '</button>';
                 
                 echo '</form>';
                 
@@ -598,7 +598,7 @@ if ( ! class_exists( 'OT_Settings' ) ) {
                 $required_setting = array(
                   array(
                     'id'        => 'title',
-                    'label'     => __( 'Title', 'option-tree' ),
+                    'label'     => __( 'Title', 'everal' ),
                     'desc'      => '',
                     'std'       => '',
                     'type'      => 'text',

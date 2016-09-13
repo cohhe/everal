@@ -220,7 +220,7 @@ if ( ! class_exists( 'OT_Meta_Box' ) ) {
             $required_setting = array(
               array(
                 'id'        => 'title',
-                'label'     => __( 'Title', 'option-tree' ),
+                'label'     => __( 'Title', 'everal' ),
                 'desc'      => '',
                 'std'       => '',
                 'type'      => 'text',

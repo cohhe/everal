@@ -43,7 +43,7 @@ if ( ! function_exists( 'ot_display_by_type' ) ) {
     if ( function_exists( $function_name_by_type ) ) {
       call_user_func( $function_name_by_type, $args );
     } else {
-      echo '<p>' . __( 'Sorry, this function does not exist', 'option-tree' ) . '</p>';
+      echo '<p>' . __( 'Sorry, this function does not exist', 'everal' ) . '</p>';
     }
     
   }
@@ -131,7 +131,7 @@ if ( ! function_exists( 'ot_type_background' ) ) {
             
             echo '<select name="' . esc_attr( $field_name ) . '[background-repeat]" id="' . esc_attr( $field_id ) . '-repeat" class="option-tree-ui-select ' . esc_attr( $field_class ) . '">';
               
-              echo '<option value="">' . __( 'background-repeat', 'option-tree' ) . '</option>';
+              echo '<option value="">' . __( 'background-repeat', 'everal' ) . '</option>';
               foreach ( ot_recognized_background_repeat( $field_id ) as $key => $value ) {
               
                 echo '<option value="' . esc_attr( $key ) . '" ' . selected( $background_repeat, $key, false ) . '>' . esc_attr( $value ) . '</option>';
@@ -149,7 +149,7 @@ if ( ! function_exists( 'ot_type_background' ) ) {
             
             echo '<select name="' . esc_attr( $field_name ) . '[background-attachment]" id="' . esc_attr( $field_id ) . '-attachment" class="option-tree-ui-select ' . $field_class . '">';
               
-              echo '<option value="">' . __( 'background-attachment', 'option-tree' ) . '</option>';
+              echo '<option value="">' . __( 'background-attachment', 'everal' ) . '</option>';
               
               foreach ( ot_recognized_background_attachment( $field_id ) as $key => $value ) {
               
@@ -168,7 +168,7 @@ if ( ! function_exists( 'ot_type_background' ) ) {
             
             echo '<select name="' . esc_attr( $field_name ) . '[background-position]" id="' . esc_attr( $field_id ) . '-position" class="option-tree-ui-select ' . esc_attr( $field_class ) . '">';
               
-              echo '<option value="">' . __( 'background-position', 'option-tree' ) . '</option>';
+              echo '<option value="">' . __( 'background-position', 'everal' ) . '</option>';
               
               foreach ( ot_recognized_background_position( $field_id ) as $key => $value ) {
                 
@@ -221,7 +221,7 @@ if ( ! function_exists( 'ot_type_background' ) ) {
             
             } else {
             
-              echo '<input type="text" name="' . esc_attr( $field_name ) . '[background-size]" id="' . esc_attr( $field_id ) . '-size" value="' . ( isset( $field_value['background-size'] ) ? esc_attr( $field_value['background-size'] ) : '' ) . '" class="widefat ot-background-size-input option-tree-ui-input ' . esc_attr( $field_class ) . '" placeholder="' . __( 'background-size', 'option-tree' ) . '" />';
+              echo '<input type="text" name="' . esc_attr( $field_name ) . '[background-size]" id="' . esc_attr( $field_id ) . '-size" value="' . ( isset( $field_value['background-size'] ) ? esc_attr( $field_value['background-size'] ) : '' ) . '" class="widefat ot-background-size-input option-tree-ui-input ' . esc_attr( $field_class ) . '" placeholder="' . __( 'background-size', 'everal' ) . '" />';
               
             }
           
@@ -238,7 +238,7 @@ if ( ! function_exists( 'ot_type_background' ) ) {
             echo '<input type="text" name="' . esc_attr( $field_name ) . '[background-image]" id="' . esc_attr( $field_id ) . '" value="' . ( isset( $field_value['background-image'] ) ? esc_attr( $field_value['background-image'] ) : '' ) . '" class="widefat option-tree-ui-upload-input ' . esc_attr( $field_class ) . '" />';
             
             /* add media button */
-            echo '<a href="javascript:void(0);" class="ot_upload_media option-tree-ui-button button button-primary light" rel="' . $post_id . '" title="' . __( 'Add Media', 'option-tree' ) . '"><span class="icon ot-icon-plus-circle"></span>' . __( 'Add Media', 'option-tree' ) . '</a>';
+            echo '<a href="javascript:void(0);" class="ot_upload_media option-tree-ui-button button button-primary light" rel="' . $post_id . '" title="' . __( 'Add Media', 'everal' ) . '"><span class="icon ot-icon-plus-circle"></span>' . __( 'Add Media', 'everal' ) . '</a>';
           
           echo '</div>';
           
@@ -254,7 +254,7 @@ if ( ! function_exists( 'ot_type_background' ) ) {
               if ( preg_match( '/\.(?:jpe?g|png|gif|ico)$/i', $field_value['background-image'] ) )
                 echo '<div class="option-tree-ui-image-wrap"><img src="' . esc_url( $field_value['background-image'] ) . '" alt="" /></div>';
               
-              echo '<a href="javascript:(void);" class="option-tree-ui-remove-media option-tree-ui-button button button-secondary light" title="' . __( 'Remove Media', 'option-tree' ) . '"><span class="icon ot-icon-minus-circle"></span>' . __( 'Remove Media', 'option-tree' ) . '</a>';
+              echo '<a href="javascript:(void);" class="option-tree-ui-remove-media option-tree-ui-button button button-secondary light" title="' . __( 'Remove Media', 'everal' ) . '"><span class="icon ot-icon-minus-circle"></span>' . __( 'Remove Media', 'everal' ) . '</a>';
               
             echo '</div>';
             
@@ -312,7 +312,7 @@ if ( ! function_exists( 'ot_type_category_checkbox' ) ) {
             echo '</p>';
           } 
         } else {
-          echo '<p>' . __( 'No Categories Found', 'option-tree' ) . '</p>';
+          echo '<p>' . __( 'No Categories Found', 'everal' ) . '</p>';
         }
       
       echo '</div>';
@@ -361,12 +361,12 @@ if ( ! function_exists( 'ot_type_category_select' ) ) {
         
         /* has cats */
         if ( ! empty( $categories ) ) {
-          echo '<option value="">-- ' . __( 'Choose One', 'option-tree' ) . ' --</option>';
+          echo '<option value="">-- ' . __( 'Choose One', 'everal' ) . ' --</option>';
           foreach ( $categories as $category ) {
             echo '<option value="' . esc_attr( $category->term_id ) . '"' . selected( $field_value, $category->term_id, false ) . '>' . esc_attr( $category->name ) . '</option>';
           }
         } else {
-          echo '<option value="">' . __( 'No Categories Found', 'option-tree' ) . '</option>';
+          echo '<option value="">' . __( 'No Categories Found', 'everal' ) . '</option>';
         }
         
         echo '</select>';
@@ -570,7 +570,7 @@ if ( ! function_exists( 'ot_type_custom_post_type_checkbox' ) ) {
             echo '</p>';
           }
         } else {
-          echo '<p>' . __( 'No Posts Found', 'option-tree' ) . '</p>';
+          echo '<p>' . __( 'No Posts Found', 'everal' ) . '</p>';
         }
         
       echo '</div>';
@@ -622,13 +622,13 @@ if ( ! function_exists( 'ot_type_custom_post_type_select' ) ) {
         
         /* has posts */
         if ( is_array( $my_posts ) && ! empty( $my_posts ) ) {
-          echo '<option value="">-- ' . __( 'Choose One', 'option-tree' ) . ' --</option>';
+          echo '<option value="">-- ' . __( 'Choose One', 'everal' ) . ' --</option>';
           foreach( $my_posts as $my_post ) {
             $post_title = '' != $my_post->post_title ? $my_post->post_title : 'Untitled';
             echo '<option value="' . esc_attr( $my_post->ID ) . '"' . selected( $field_value, $my_post->ID, false ) . '>' . $post_title . '</option>';
           }
         } else {
-          echo '<option value="">' . __( 'No Posts Found', 'option-tree' ) . '</option>';
+          echo '<option value="">' . __( 'No Posts Found', 'everal' ) . '</option>';
         }
         
         echo '</select>';
@@ -809,15 +809,15 @@ if ( ! function_exists( 'ot_type_gallery' ) ) {
           
           echo '
           <div class="ot-gallery-buttons">
-            <a href="#" class="option-tree-ui-button button button-secondary hug-left ot-gallery-delete">' . __( 'Delete Gallery', 'option-tree' ) . '</a>
-            <a href="#" class="option-tree-ui-button button button-primary right hug-right ot-gallery-edit">' . __( 'Edit Gallery', 'option-tree' ) . '</a>
+            <a href="#" class="option-tree-ui-button button button-secondary hug-left ot-gallery-delete">' . __( 'Delete Gallery', 'everal' ) . '</a>
+            <a href="#" class="option-tree-ui-button button button-primary right hug-right ot-gallery-edit">' . __( 'Edit Gallery', 'everal' ) . '</a>
           </div>';
         
         } else {
         
           echo '
           <div class="ot-gallery-buttons">
-            <a href="#" class="option-tree-ui-button button button-primary right hug-right ot-gallery-edit">' . __( 'Create Gallery', 'option-tree' ) . '</a>
+            <a href="#" class="option-tree-ui-button button button-primary right hug-right ot-gallery-edit">' . __( 'Create Gallery', 'everal' ) . '</a>
           </div>';
         
         }
@@ -889,10 +889,10 @@ if ( ! function_exists( 'ot_type_list_item' ) ) {
         echo '</ul>';
         
         /* button */
-        echo '<a href="javascript:void(0);" class="option-tree-list-item-add option-tree-ui-button button button-primary right hug-right" title="' . __( 'Add New', 'option-tree' ) . '">' . __( 'Add New', 'option-tree' ) . '</a>';
+        echo '<a href="javascript:void(0);" class="option-tree-list-item-add option-tree-ui-button button button-primary right hug-right" title="' . __( 'Add New', 'everal' ) . '">' . __( 'Add New', 'everal' ) . '</a>';
         
         /* description */
-        echo '<div class="list-item-description">' . apply_filters( 'ot_list_item_description', __( 'You can re-order with drag & drop, the order will update after saving.', 'option-tree' ), $field_id ) . '</div>';
+        echo '<div class="list-item-description">' . apply_filters( 'ot_list_item_description', __( 'You can re-order with drag & drop, the order will update after saving.', 'everal' ), $field_id ) . '</div>';
       
       echo '</div>';
 
@@ -1043,11 +1043,11 @@ if ( ! function_exists( 'ot_type_on_off' ) ) {
         $field_choices = array(
           array(
             'value'   => 'on',
-            'label'   => __( 'On', 'option-tree' ),
+            'label'   => __( 'On', 'everal' ),
           ),
           array(
             'value'   => 'off',
-            'label'   => __( 'Off', 'option-tree' ),
+            'label'   => __( 'Off', 'everal' ),
           )
         );
         
@@ -1115,7 +1115,7 @@ if ( ! function_exists( 'ot_type_page_checkbox' ) ) {
           echo '</p>';
         }
       } else {
-        echo '<p>' . __( 'No Pages Found', 'option-tree' ) . '</p>';
+        echo '<p>' . __( 'No Pages Found', 'everal' ) . '</p>';
       }
       
       echo '</div>';
@@ -1164,13 +1164,13 @@ if ( ! function_exists( 'ot_type_page_select' ) ) {
         
         /* has pages */
         if ( is_array( $my_posts ) && ! empty( $my_posts ) ) {
-          echo '<option value="">-- ' . __( 'Choose One', 'option-tree' ) . ' --</option>';
+          echo '<option value="">-- ' . __( 'Choose One', 'everal' ) . ' --</option>';
           foreach( $my_posts as $my_post ) {
             $post_title = '' != $my_post->post_title ? $my_post->post_title : 'Untitled';
             echo '<option value="' . esc_attr( $my_post->ID ) . '"' . selected( $field_value, $my_post->ID, false ) . '>' . $post_title . '</option>';
           }
         } else {
-          echo '<option value="">' . __( 'No Pages Found', 'option-tree' ) . '</option>';
+          echo '<option value="">' . __( 'No Pages Found', 'everal' ) . '</option>';
         }
         
         echo '</select>';
@@ -1226,7 +1226,7 @@ if ( ! function_exists( 'ot_type_post_checkbox' ) ) {
             echo '</p>';
           } 
         } else {
-          echo '<p>' . __( 'No Posts Found', 'option-tree' ) . '</p>';
+          echo '<p>' . __( 'No Posts Found', 'everal' ) . '</p>';
         }
         
       echo '</div>';
@@ -1275,13 +1275,13 @@ if ( ! function_exists( 'ot_type_post_select' ) ) {
         
         /* has posts */
         if ( is_array( $my_posts ) && ! empty( $my_posts ) ) {
-          echo '<option value="">-- ' . __( 'Choose One', 'option-tree' ) . ' --</option>';
+          echo '<option value="">-- ' . __( 'Choose One', 'everal' ) . ' --</option>';
           foreach( $my_posts as $my_post ) {
             $post_title = '' != $my_post->post_title ? $my_post->post_title : 'Untitled';
             echo '<option value="' . esc_attr( $my_post->ID ) . '"' . selected( $field_value, $my_post->ID, false ) . '>' . $post_title . '</option>';
           }
         } else {
-          echo '<option value="">' . __( 'No Posts Found', 'option-tree' ) . '</option>';
+          echo '<option value="">' . __( 'No Posts Found', 'everal' ) . '</option>';
         }
         
         echo '</select>';
@@ -1503,12 +1503,12 @@ if ( ! function_exists( 'ot_type_sidebar_select' ) ) {
 
         /* has sidebars */
         if ( count( $sidebars ) ) {
-          echo '<option value="">-- ' . __( 'Choose Sidebar', 'option-tree' ) . ' --</option>';
+          echo '<option value="">-- ' . __( 'Choose Sidebar', 'everal' ) . ' --</option>';
           foreach ( $sidebars as $id => $sidebar ) {
             echo '<option value="' . esc_attr( $id ) . '"' . selected( $field_value, $id, false ) . '>' . esc_attr( $sidebar ) . '</option>';
           }
         } else {
-          echo '<option value="">' . __( 'No Sidebars', 'option-tree' ) . '</option>';
+          echo '<option value="">' . __( 'No Sidebars', 'everal' ) . '</option>';
         }
         
         echo '</select>';
@@ -1580,10 +1580,10 @@ if ( ! function_exists( 'ot_type_slider' ) ) {
         echo '</ul>';
         
         /* button */
-        echo '<a href="javascript:void(0);" class="option-tree-list-item-add option-tree-ui-button button button-primary right hug-right" title="' . __( 'Add New', 'option-tree' ) . '">' . __( 'Add New', 'option-tree' ) . '</a>';
+        echo '<a href="javascript:void(0);" class="option-tree-list-item-add option-tree-ui-button button button-primary right hug-right" title="' . __( 'Add New', 'everal' ) . '">' . __( 'Add New', 'everal' ) . '</a>';
         
         /* description */
-        echo '<div class="list-item-description">' . __( 'You can re-order with drag & drop, the order will update after saving.', 'option-tree' ) . '</div>';
+        echo '<div class="list-item-description">' . __( 'You can re-order with drag & drop, the order will update after saving.', 'everal' ) . '</div>';
       
       echo '</div>';
 
@@ -1616,87 +1616,87 @@ if ( ! function_exists( 'ot_type_social_links' ) ) {
       
       $field_value = apply_filters( 'ot_type_social_links_defaults', array(
         array(
-          'name'    => __( 'Facebook', 'option-tree' ),
+          'name'    => __( 'Facebook', 'everal' ),
           'title'   => '',
           'href'    => ''
         ),
         array(
-          'name'    => __( 'Twitter', 'option-tree' ),
+          'name'    => __( 'Twitter', 'everal' ),
           'title'   => '',
           'href'    => ''
         ),
         array(
-          'name'    => __( 'Google+', 'option-tree' ),
+          'name'    => __( 'Google+', 'everal' ),
           'title'   => '',
           'href'    => ''
         ),
         array(
-          'name'    => __( 'LinkedIn', 'option-tree' ),
+          'name'    => __( 'LinkedIn', 'everal' ),
           'title'   => '',
           'href'    => ''
         ),
         array(
-          'name'    => __( 'Pinterest', 'option-tree' ),
+          'name'    => __( 'Pinterest', 'everal' ),
           'title'   => '',
           'href'    => ''
         ),
         array(
-          'name'    => __( 'Youtube', 'option-tree' ),
+          'name'    => __( 'Youtube', 'everal' ),
           'title'   => '',
           'href'    => ''
         ),
         array(
-          'name'    => __( 'Dribbble', 'option-tree' ),
+          'name'    => __( 'Dribbble', 'everal' ),
           'title'   => '',
           'href'    => ''
         ),
         array(
-          'name'    => __( 'Github', 'option-tree' ),
+          'name'    => __( 'Github', 'everal' ),
           'title'   => '',
           'href'    => ''
         ),
         array(
-          'name'    => __( 'Forrst', 'option-tree' ),
+          'name'    => __( 'Forrst', 'everal' ),
           'title'   => '',
           'href'    => ''
         ),
         array(
-          'name'    => __( 'Digg', 'option-tree' ),
+          'name'    => __( 'Digg', 'everal' ),
           'title'   => '',
           'href'    => ''
         ),
         array(
-          'name'    => __( 'Delicious', 'option-tree' ),
+          'name'    => __( 'Delicious', 'everal' ),
           'title'   => '',
           'href'    => ''
         ),
         array(
-          'name'    => __( 'Tumblr', 'option-tree' ),
+          'name'    => __( 'Tumblr', 'everal' ),
           'title'   => '',
           'href'    => ''
         ),
         array(
-          'name'    => __( 'Skype', 'option-tree' ),
+          'name'    => __( 'Skype', 'everal' ),
           'title'   => '',
           'href'    => ''
         ),
         array(
-          'name'    => __( 'SoundCloud', 'option-tree' ),
+          'name'    => __( 'SoundCloud', 'everal' ),
           'title'   => '',
           'href'    => ''
         ),
         array(
-          'name'    => __( 'Vimeo', 'option-tree' ),
+          'name'    => __( 'Vimeo', 'everal' ),
           'title'   => '',
           'href'    => ''
         ),
         array(
-          'name'    => __( 'Flickr', 'option-tree' ),
+          'name'    => __( 'Flickr', 'everal' ),
           'title'   => '',
           'href'    => ''
         ),
         array(
-          'name'    => __( 'VK.com', 'option-tree' ),
+          'name'    => __( 'VK.com', 'everal' ),
           'title'   => '',
           'href'    => ''
         )
@@ -1745,10 +1745,10 @@ if ( ! function_exists( 'ot_type_social_links' ) ) {
         echo '</ul>';
         
         /* button */
-        echo '<a href="javascript:void(0);" class="option-tree-social-links-add option-tree-ui-button button button-primary right hug-right" title="' . __( 'Add New', 'option-tree' ) . '">' . __( 'Add New', 'option-tree' ) . '</a>';
+        echo '<a href="javascript:void(0);" class="option-tree-social-links-add option-tree-ui-button button button-primary right hug-right" title="' . __( 'Add New', 'everal' ) . '">' . __( 'Add New', 'everal' ) . '</a>';
         
         /* description */
-        echo '<div class="list-item-description">' . apply_filters( 'ot_social_links_description', __( 'You can re-order with drag & drop, the order will update after saving.', 'option-tree' ), $field_id ) . '</div>';
+        echo '<div class="list-item-description">' . apply_filters( 'ot_social_links_description', __( 'You can re-order with drag & drop, the order will update after saving.', 'everal' ), $field_id ) . '</div>';
       
       echo '</div>';
 
@@ -1829,7 +1829,7 @@ if ( ! function_exists( 'ot_type_tag_checkbox' ) ) {
             echo '</p>';
           } 
         } else {
-          echo '<p>' . __( 'No Tags Found', 'option-tree' ) . '</p>';
+          echo '<p>' . __( 'No Tags Found', 'everal' ) . '</p>';
         }
         
       echo '</div>';
@@ -1878,12 +1878,12 @@ if ( ! function_exists( 'ot_type_tag_select' ) ) {
         
         /* has tags */
         if ( $tags ) {
-          echo '<option value="">-- ' . __( 'Choose One', 'option-tree' ) . ' --</option>';
+          echo '<option value="">-- ' . __( 'Choose One', 'everal' ) . ' --</option>';
           foreach( $tags as $tag ) {
             echo '<option value="' . esc_attr( $tag->term_id ) . '"' . selected( $field_value, $tag->term_id, false ) . '>' . esc_attr( $tag->name ) . '</option>';
           }
         } else {
-          echo '<option value="">' . __( 'No Tags Found', 'option-tree' ) . '</option>';
+          echo '<option value="">' . __( 'No Tags Found', 'everal' ) . '</option>';
         }
         
         echo '</select>';
@@ -1941,7 +1941,7 @@ if ( ! function_exists( 'ot_type_taxonomy_checkbox' ) ) {
             echo '</p>';
           } 
         } else {
-          echo '<p>' . __( 'No Taxonomies Found', 'option-tree' ) . '</p>';
+          echo '<p>' . __( 'No Taxonomies Found', 'everal' ) . '</p>';
         }
         
       echo '</div>';
@@ -1993,12 +1993,12 @@ if ( ! function_exists( 'ot_type_taxonomy_select' ) ) {
         
         /* has tags */
         if ( $taxonomies ) {
-          echo '<option value="">-- ' . __( 'Choose One', 'option-tree' ) . ' --</option>';
+          echo '<option value="">-- ' . __( 'Choose One', 'everal' ) . ' --</option>';
           foreach( $taxonomies as $taxonomy ) {
             echo '<option value="' . esc_attr( $taxonomy->term_id ) . '"' . selected( $field_value, $taxonomy->term_id, false ) . '>' . esc_attr( $taxonomy->name ) . '</option>';
           }
         } else {
-          echo '<option value="">' . __( 'No Taxonomies Found', 'option-tree' ) . '</option>';
+          echo '<option value="">' . __( 'No Taxonomies Found', 'everal' ) . '</option>';
         }
         
         echo '</select>';
@@ -2434,7 +2434,7 @@ if ( ! function_exists( 'ot_type_upload' ) ) {
           echo '<input type="text" name="' . esc_attr( $field_name ) . '" id="' . esc_attr( $field_id ) . '" value="' . esc_attr( $field_value ) . '" class="widefat option-tree-ui-upload-input ' . esc_attr( $field_class ) . '" />';
           
           /* add media button */
-          echo '<a href="javascript:void(0);" class="ot_upload_media option-tree-ui-button button button-primary light" rel="' . $post_id . '" title="' . __( 'Add Media', 'option-tree' ) . '"><span class="icon ot-icon-plus-circle"></span>' . __( 'Add Media', 'option-tree' ) . '</a>';
+          echo '<a href="javascript:void(0);" class="ot_upload_media option-tree-ui-button button button-primary light" rel="' . $post_id . '" title="' . __( 'Add Media', 'everal' ) . '"><span class="icon ot-icon-plus-circle"></span>' . __( 'Add Media', 'everal' ) . '</a>';
         
         echo '</div>';
         
@@ -2450,7 +2450,7 @@ if ( ! function_exists( 'ot_type_upload' ) ) {
             if ( preg_match( '/\.(?:jpe?g|png|gif|ico)$/i', $field_value ) )
               echo '<div class="option-tree-ui-image-wrap"><img src="' . esc_url( $field_value ) . '" alt="" /></div>';
             
-            echo '<a href="javascript:(void);" class="option-tree-ui-remove-media option-tree-ui-button button button-secondary light" title="' . __( 'Remove Media', 'option-tree' ) . '"><span class="icon ot-icon-minus-circle"></span>' . __( 'Remove Media', 'option-tree' ) . '</a>';
+            echo '<a href="javascript:(void);" class="option-tree-ui-remove-media option-tree-ui-button button button-secondary light" title="' . __( 'Remove Media', 'everal' ) . '"><span class="icon ot-icon-minus-circle"></span>' . __( 'Remove Media', 'everal' ) . '</a>';
             
           echo '</div>';
           
