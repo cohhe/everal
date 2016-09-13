@@ -1974,6 +1974,7 @@ article .entry-content dd {
 
 .widget .divider {
 	position: relative;
+	display: inline-block;
 }
 
 .widget .divider:after {
@@ -3221,6 +3222,11 @@ div.wpcf7-mail-sent-ok {
 	.swiper-slide .slider-content p {
 		font-size: 120%;
 		line-height: 28px;
+	}
+
+	body .site-content article.type-post,
+	body .site-content article.type-page {
+		float: none !important;
 	}
 }
 
